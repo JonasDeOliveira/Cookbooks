@@ -1,35 +1,80 @@
-## Welcome to GitHub Pages
+## Traduzindo arquivos JavaScript no Magento.
 
-You can use the [editor on GitHub](https://github.com/JonasDeOliveira/teste/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+Neste tutorial mostrarei como aplicar os padrões de internacionalização do Magento em arquivos JavaScript.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Bom, primeiro configure o seu arquivo de tradução no **_config.xml_** que fica em:  
+app/code/codepool/NameSpace/ModuleName/etc/config.xml
 
-### Markdown
+```
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <NameSpace_ModuleName>
+            <version>1.0.0.0</version>
+        </NameSpace_ModuleName>
+    </modules>
+    <frontend>
+        <translate>
+            <modules>
+                <NameSpace_ModuleName>
+                    <files>
+                        <default>NameSpace_ModuleName.csv</default>
+                    </files>
+                </NameSpace_ModuleName>
+            </modules>
+        </translate>
+    </frontend>
+</config>
+```
+Coloque o nome do seu arquivo de tradução dentro da tag **_<default>_**, colocando o Name Space e o nome do módulo como no exemplo acima.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-```markdown
-Syntax highlighted code block
+Crie um arquivo chamado **_jstranslator.xml_** em:
+app/code/codepool/NameSpace/ModuleName/etc/jstranslator.xml
+```
+<?xml version="1.0"?>
+<jstranslator>
 
-# Header 1
-## Header 2
-### Header 3
+    <!-- jsfilename.js →
 
-- Bulleted
-- List
+    <error_message translate="message" module="modulename">
+        <message>Error reported</message>
+    </error_message>
 
-1. Numbered
-2. List
+    <success_message translate="message" module="modulename">
+        <message>Successfully registered</message>
+    </success_message>
 
-**Bold** and _Italic_ and `Code` text
+    <thank_message translate="message" module="modulename">
+        <message>Thank you for registering</message>
+    </thank_message>
 
-[Link](url) and ![Image](src)
+    <!-- end jsfilename.js →
+
+</jstranslator>
+```
+Repare que as tags **_<error_message>_**, **_<success_message>_** e **_<thank_message>_**, servem apenas para a sua organização ou seja, você determina os nomes de acordo com a sua organização, se você colocar **_<message_error>_** também irá funcionar.
+
+Em **_translate="message"_** indica a tag que será traduzida, nesse caso <message>.
+
+Em **_module="modulename"_** coloque o nome do seu módulo com todas as letras minúsculas.
+
+Dentro da tag **_<message>_**, coloque a mensagem que irá ser traduzida em inglês.
+
+
+Agora crie o arquivo csv que você configurou no **_config.xml_** e coloque as mensagens que você quer traduzir e a tradução separados por aspas duplas e vírgula, como no exmplo abaixo:
+
+app/locale/pt_BR/NameSpace_ModuleName.csv
+```
+"Error reported","Erro relatado"
+"Successfully registered","Registrado com sucesso"
+"Thank you for registering","Obrigado por se registrar"
 ```
 
-teste
+Por fim, em seu arquivo JS coloque a string que você deseja traduzir dentro de **_Translator.translate(‘ ’)_**, como no exmplo abaixo:
 
-```markdown
- errorMessage: function() {
+```
+errorMessage: function() {
    return Translator.translate('Error reported');
 },
 successMessage: function() {
@@ -39,13 +84,3 @@ thankMessage: function() {
     return Translator.translate('Thank you for registering');
 }
 ```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/JonasDeOliveira/teste/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
