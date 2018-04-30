@@ -26,6 +26,20 @@ Syntax highlighted code block
 [Link](url) and ![Image](src)
 ```
 
+teste
+
+```markdown
+ errorMessage: function() {
+   return Translator.translate('Error reported');
+},
+successMessage: function() {
+    return Translator.translate('Successfully registered');
+},
+thankMessage: function() {
+    return Translator.translate('Thank you for registering');
+}
+```
+
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
 ### Jekyll Themes
