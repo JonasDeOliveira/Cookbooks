@@ -1,2 +1,2 @@
-[## Traduzindo arquivos JavaScript no Magento](translate.md)
+[## Traduzindo arquivos JavaScript no Magento](./tutorials/trad-js-magento.html)
 
