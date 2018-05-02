@@ -38,9 +38,10 @@ Crie um arquivo chamado `jstranslator.xml` em:
 
 ```xml
 <?xml version="1.0"?>
+
 <jstranslator>
 
-    <!-- jsfilename.js →
+    <!-- jsfilename.js -->
 
     <error_message translate="message" module="modulename">
         <message>Error reported</message>
@@ -54,7 +55,7 @@ Crie um arquivo chamado `jstranslator.xml` em:
         <message>Thank you for registering</message>
     </thank_message>
 
-    <!-- end jsfilename.js →
+    <!-- end jsfilename.js -->
 
 </jstranslator>
 ```
