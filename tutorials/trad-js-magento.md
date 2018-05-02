@@ -30,7 +30,7 @@ app/code/codepool/NameSpace/ModuleName/etc/config.xml
     </frontend>
 </config>
 ```
-Coloque o nome do seu arquivo de tradução dentro da tag **_<default>_**, colocando o Name Space e o nome do módulo como no exemplo acima.
+Coloque o nome do seu arquivo de tradução dentro da tag  `<default>`  , colocando o Name Space e o nome do módulo como no exemplo acima.
 
 
 Crie um arquivo chamado **_jstranslator.xml_** em:
