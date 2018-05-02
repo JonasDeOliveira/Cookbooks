@@ -9,7 +9,7 @@ Neste tutorial mostrarei como aplicar os padrões de internacionalização do Ma
 Bom, primeiro configure o seu arquivo de tradução no `config.xml` que fica em:  
 `app/code/codepool/NameSpace/ModuleName/etc/config.xml`
 
-```
+```xml
 <?xml version="1.0"?>
 <config>
     <modules>
@@ -35,7 +35,8 @@ Coloque o nome do seu arquivo de tradução dentro da tag  `<default>`  , coloc
 
 Crie um arquivo chamado `jstranslator.xml` em:
 `app/code/codepool/NameSpace/ModuleName/etc/jstranslator.xml`
-```
+
+```xml
 <?xml version="1.0"?>
 <jstranslator>
 
@@ -69,7 +70,8 @@ Dentro da tag `<message>`, coloque a mensagem que irá ser traduzida em inglês.
 Agora crie o arquivo csv que você configurou no `config.xml` e coloque as mensagens que você quer traduzir e a tradução separados por aspas duplas e vírgula, como no exmplo abaixo:
 
 `app/locale/pt_BR/NameSpace_ModuleName.csv`
-```
+
+```csv
 "Error reported","Erro relatado"
 "Successfully registered","Registrado com sucesso"
 "Thank you for registering","Obrigado por se registrar"
@@ -77,7 +79,7 @@ Agora crie o arquivo csv que você configurou no `config.xml` e coloque as mensa
 
 Por fim, em seu arquivo JS coloque a string que você deseja traduzir dentro de `Translator.translate(‘ ’)`, como no exmplo abaixo:
 
-```
+```javascript
 errorMessage: function() {
    return Translator.translate('Error reported');
 },
