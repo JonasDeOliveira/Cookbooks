@@ -30,7 +30,7 @@ Bom, primeiro configure o seu arquivo de tradução no `config.xml` que fica em:
     </frontend>
 </config>
 ```
-Coloque o nome do seu arquivo de tradução dentro da tag  `<default>`  , colocando o Name Space e o nome do módulo como no exemplo acima.
+Coloque o nome do seu arquivo de tradução dentro da tag  `<default>` , colocando o Name Space e o nome do módulo como no exemplo acima.
 
 
 Crie um arquivo chamado `jstranslator.xml` em:
