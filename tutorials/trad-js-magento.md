@@ -61,7 +61,7 @@ Crie um arquivo chamado `jstranslator.xml` em:
 ```
 Repare que as tags `<error_message>`, `<success_message>` e `<thank_message>`, servem apenas para a sua organização ou seja, você determina os nomes de acordo com a sua organização, se você colocar `<message_error>` também irá funcionar.
 
-Em `translate="message"` indica a tag que será traduzida, nesse caso <message>.
+Em `translate="message"` indica a tag que será traduzida, nesse caso `<message>`.
 
 Em `module="modulename"` coloque o nome do seu módulo com todas as letras minúsculas.
 
