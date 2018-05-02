@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 ## Traduzindo arquivos JavaScript no Magento.
 
 Neste tutorial mostrarei como aplicar os padrões de internacionalização do Magento em arquivos JavaScript.
