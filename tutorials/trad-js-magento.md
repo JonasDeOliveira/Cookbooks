@@ -63,7 +63,7 @@ Repare que as tags `<error_message>`, `<success_message>` e `<thank_message>`, s
 
 Em `translate="message"` indica a tag que será traduzida, nesse caso `<message>`.
 
-Em `module="modulename"` coloque o nome do seu módulo com todas as letras minúsculas.
+Em `module="modulename"` coloque o nome do helper do seu módulo.
 
 Dentro da tag `<message>`, coloque a mensagem que irá ser traduzida em inglês.
 
